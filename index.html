@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>ようこそ</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Gothic&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="audio" id="audio">
+            <div class="audio-content">
+                <h1 class="audio-title">音声を許可しますか？</h1>
+                <p class="audio-dis">このサイトでは音声が流れます。より良い体験のため、オンにすることをお勧めします。</p>
+                <ul class="audio-per">
+                    <li><a onclick="okAudio(true)" class="audio-per-char">許可する</a></li>
+                    <li><a onclick="okAudio(false)" class="audio-per-char">許可しない</a></li>
+                </ul>
+                <h1 class="audio-title">再生する音声</h1>
+                <div class="input-button">
+                    <input type="file" onchange="fileChanged(this)">
+                </div>
+                <h1 class="audio-title">世界の名前</h1>
+                <div class="input-button">
+                    <input type="text" id="inputWorldName" value="幻想郷">
+                </div>
+                <h1 class="audio-title">最後のセリフ</h1>
+                <div class="input-button">
+                    <input type="text" id="inputMainText" value="Till When?">
+                </div>
+                <h1 class="audio-title">1秒あたりの表示文字数</h1>
+                <div class="input-button">
+                    <input type="number" id="inputCountPerSec" value="20" min="1" max="1000">
+                </div>
+                <h1 class="audio-title">1文字当たりのアニメーションの時間(sec)</h1>
+                <div class="input-button">
+                    <input type="number" id="inputTime" value="0.5" min="0.0001" max="10">
+                </div>
+            </div>
+        </div>
+        <div class="start" id="start">
+            <div class="start-top">
+                <div class="start-top-up" id="startTopUp">
+                    <p class="start-words" id="startWords">ようこそ、&lt;<span style="color: #E63A10" id="worldName">U</span>&gt;の世界へ</p>
+                </div>
+                <div class="start-line" id="startLineTop"></div>
+            </div>
+            <div class="start-bottom">
+                <div class="start-line" id="startLineBottom"></div>
+                <div class="start-bottom-down" id="startBottomDown"></div>
+            </div>
+        </div>
+        <div class="main" id="main">
+            <div class="main-content" id="mainContent">
+                <p class="main-text" id="mainText"></p>
+                <div class="main-text-line" id="mainTextLine"></div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
